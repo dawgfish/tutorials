@@ -243,14 +243,14 @@ To verify your Git settings of the local repository, use git config –list comm
 .. code-block:: bash
 
   [jerry@CentOS ~]$ git config --list
-   user.name=Jerry Mouse
-   user.email=jerry@tutorialspoint.com
-   push.default=nothing
-   branch.autosetuprebase=always
-   color.ui=true
-   color.status=auto
-   color.branch=auto
-   core.editor=vim
-   merge.tool=vimdiff
+  user.name=Jerry Mouse
+  user.email=jerry@tutorialspoint.com
+  push.default=nothing
+  branch.autosetuprebase=always
+  color.ui=true
+  color.status=auto
+  color.branch=auto
+  core.editor=vim
+  merge.tool=vimdiff
  
 
