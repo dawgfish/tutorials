@@ -594,7 +594,7 @@ Prior to pushing his changes he wants to view the updates by:
   Author: booboo bear <booboo@jellystone.com>
   Date: Wed Feb 11 08:05:26 2018 +0530
   
-booboo is happy with his contents and he is ready to push his changes.
+3. Push the changes.
 
 .. code-block:: bash
 
