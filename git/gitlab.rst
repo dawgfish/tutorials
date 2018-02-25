@@ -508,7 +508,7 @@ booboo has successfully cloned the repository and decides to add a file. So he c
 
 .. code-block:: bash
 
-  #booboo's file
+  #booboo is smarter than the average bear.
 
 booboo saves the file and now he can safely add it to the repository.
 
@@ -528,7 +528,7 @@ booboo has added the file to the staging area - git *status* command will show f
 
 .. code-block:: bash
 
-  [jerry@CentOS project]$ git status -s
+  [booboo@CentOS project]$ git status -s
   A booboo.md
   ?? booboo
 
@@ -580,16 +580,16 @@ Prior to pushing his changes he wants to view the updates by:
 
 .. code-block:: bash
 
-  [jerry@CentOS project]$ git log
+  [booboo@CentOS project]$ git log
   commit d1e19d316224cddc437e3ed34ec3c931ad803958
-  Author: Jerry Mouse <jerry@tutorialspoint.com>
+  Author: booboo bear <booboo@jellystone.com>
   Date: Wed Feb 11 08:05:26 2018 +0530
   
 2. Viewing the contents:
 
 .. code-block:: bash
 
-  [jerry@CentOS project]$ git show d1e19d316224cddc437e3ed34ec3c931ad803958
+  [booboo@CentOS project]$ git show d1e19d316224cddc437e3ed34ec3c931ad803958
   commit d1e19d316224cddc437e3ed34ec3c931ad803958
   Author: booboo bear <booboo@jellystone.com>
   Date: Wed Feb 11 08:05:26 2018 +0530
