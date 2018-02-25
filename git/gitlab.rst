@@ -266,3 +266,6 @@ General workflow is as follows:
 - You commit changes. If everything is fine, then you push the changes to the repository.
 - After committing, if you realize something is wrong, then you correct the last commit	and push the changes to the repository.
 - Shown below is the pictorial representation of the work-flow.
+
+
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/git/image2.png
