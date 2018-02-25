@@ -50,4 +50,17 @@ Typical CVCS systems use cheap copy mechanisms when creating a new branch. Git b
 Terminologies:
 **************
 
+**Local Repository**
+VCS tool provide private workplace(s) for working copies. Prject contributors (developers) make changes/modifications within their private workplace then commit changes. These committed changes then become a part of the repository. Git takes it one step further by providing a private copy of the entire repository. Users can then perform multiple operations on the repository such as add file, remove file, rename file, move file, commit changes, etc... .
 
+**Working Directory vs. Staging Area (Index):**
+
+The working directory is the place where files are checked out. In other CVCS, developers generally make modifications and commit their changes directly to the repository. But Git uses a different strategy. Git doesn’t track each and every modified file. Whenever you do commit an operation, Git looks for the files present in the staging area. Only those files present in the staging area are considered for commit and not all the modified files.
+
+Let us see the basic workflow of Git.
+
+Step 1 : You modify a file from the working directory.
+
+Step 2 : You add these files to the staging area.
+
+Step 3 : You perform commit operation that moves the files from the staging area. After push operation, it stores the changes permanently to the Git repository.
