@@ -155,4 +155,49 @@ URLs represent the Git repository location. Git URLs are stored in the config fi
   
   
   
+Install Git:
+************
+
+Create a CentOS Guest VM using the cluster's configured network.
+
+Login to the CentOS Guest VM and use *yum* to install git as follows:
+
+.. code-block:: bash
+
+  [CentOS ~]$
+   su -
+   Password: *******
+
+  [CentOS ~]# yum -y install git-core
+
+  [CentOS ~]# git --version
+  git version 1.7.1
+
+
+Customize Git Environment:
+**************************
+Git provides the git config tool, which allows you to set configuration variables. Git stores all global configurations in *.gitconfig* file, which is located in the users home directory. To set these configuration values as global, add the *--global* option.  
+
+**Note:** if you omit the *--global* option, then your configurations are specific for the current Git repository.
+
+You can also set up system wide configuration. Git stores these values in the */etc/gitconfig* file, which contains the configuration for every user and repository on the system. To set these values, you must have *root* privledges and use the *--system* option.
+
+When the above code is compiled and executed, it produces the following result:
+
+Setting username
+================
+This information is used by Git commits.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git config --global user.name "booboo bear"
   
+Setting email ID
+================
+This information is used by Git commits.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git config --global user.email "you@someemaildomain.com"
+
+
