@@ -267,3 +267,190 @@ To verify your Git settings of the local repository, use git config –list comm
   core.editor=vim
   merge.tool=vimdiff
  
+Creating a GitServer:
+*********************
+In this section, we'll create a remote Git repository/Git Server. We need a Git server to allow team collaboration.
+
+Create New User
+===============
+
+.. code-block:: bash
+
+  # add new group
+  [root@CentOS ~]# groupadd dev
+
+  # add new user
+  [root@CentOS ~]# useradd -G devs -d /home/gituser -m -s /bin/bash gituser
+
+  # change password
+  [root@CentOS ~]# passwd gituser
+
+The above command will produce the following result.
+
+.. code-block:: bash
+
+  Changing password for user gituser.
+  New password:
+  Retype new password:
+  passwd: all authentication token updated successfully.
+  
+Create an empty Repository
+==========================
+We'll initialize a new repository by using *init* command followed by *--bare* option. This initializes the repository without a working directory. By convention, the bare repository must be named as *.git*.
+
+.. code-block:: bash
+
+  [gituser@CentOS ~]$ pwd
+  /home/gituser
+
+  [gituser@CentOS ~]$ mkdir project.git
+  [gituser@CentOS ~]$ cd project.git/
+  [gituser@CentOS project.git]$ ls
+  [gituser@CentOS project.git]$ git --bare init
+  Initialized empty Git repository in /home/gituser-m/project.git/
+
+  [gituser@CentOS project.git]$ ls
+  branches config description HEAD hooks info objects refs
+
+Generate Public/Private RSA Key Pair
+====================================
+We'll step through the process of configuring a Git server, ssh-keygen utility generates public/private RSA key pair, that we will use for user authentication.
+
+Open a terminal and enter the following command and just press enter for each input. After successful completion, it will create a .ssh directory inside the home directory.
+
+.. code-block:: bash
+
+  booboo@CentOS ~]$ pwd
+  /home/booboo
+
+  [booboo@CentOS ~]$ ssh-keygen
+
+
+The above command will produce the following result.
+
+.. code-block:: bash
+
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/home/tom/.ssh/id_rsa): Press Enter Only
+  Created directory '/home/tom/.ssh'.
+  Enter passphrase (empty for no passphrase): ---------------> Press Enter Only
+  Enter same passphrase again: ------------------------------> Press Enter Only
+  Your identification has been saved in /home/tom/.ssh/id_rsa.
+  Your public key has been saved in /home/tom/.ssh/id_rsa.pub.
+  The key fingerprint is:
+  df:93:8c:a1:b8:b7:67:69:3a:1f:65:e8:0e:e9:25:a1 tom@CentOS
+  The key's randomart image is:
+  +--[ RSA 2048]----+
+  | |
+  | |
+  | |
+  |
+  .
+  |
+  | Soo |
+  | o*B. |
+  | E = *.= |
+  | oo==. . |
+  | ..+Oo
+  |
+  +-----------------+
+  
+*ssh-keygen* has generated two keys, first one is private (i.e., id_rsa) and the second one is public (i.e., id_rsa.pub).
+
+**Note:** PRIVATE KEYs should never be shared with others.
+
+Adding Keys
+===========
+Suppose there are two users working on a the same project, namely booboo and yogi. Both users have generated public keys. Let us see how to use these keys for authentication.
+
+yogi added his public key to the server by using *ssh-copy-id* command as given below:
+
+.. clode-block:: bash
+
+  [yogi@CentOS ~]$ pwd
+  /home/yogi
+
+  [yogi@CentOS ~]$ ssh-copy-id -i ~/.ssh/id_rsa.pub gituser@git.server.com
+  
+The above command will produce the following result.
+
+.. code-block:: bash
+
+  gituser@git.server.com's password:
+  Now try logging into the machine, with "ssh 'gituser@git.server.com'", and check in:
+  .ssh/authorized_keys
+  to make sure we haven't added extra keys that you weren't expecting.
+
+Similarly, booboo added his public key to the server by using ssh-copy-id command.
+
+.. code-block:: bash
+
+  [booboo@CentOS ~]$ pwd
+  /home/booboo
+
+  [booboo@CentOS ~]$ ssh-copy-id -i ~/.ssh/id_rsa gituser@git.server.com
+
+The above command will produce the following result.
+
+.. code-block:: bash
+
+  gituser@git.server.com's password:
+  Now try logging into the machine, with "ssh 'gituser@git.server.com'", and check in:
+  .ssh/authorized_keys
+  to make sure we haven't added extra keys that you weren't expecting.
+
+Push Changes to the Repository
+==============================
+We have created an empty repository on the server and allowed access for two users. From now on, yogi and booboo can push their changes to the repository by adding it as a remote.
+
+Git init command creates .git directory to store metadata about the repository every time it reads the configuration from the .git/config file.
+
+yogi creates a new directory, adds README file, and commits his change as initial commit. After commit, he verifies the commit message by running the git log command.
+
+.. code-block:: bash
+
+  [yogi@CentOS ~]$ pwd
+  /home/yogi
+  
+  [yogi@CentOS ~]$ mkdir yogi_repo
+  [yogi@CentOS ~]$ cd yogi_repo/
+  [yogi@CentOS yogi_repo]$ git init
+  Initialized empty Git repository in /home/yogi/yogi_repo/.git/
+
+  [yogi@CentOS tom_repo]$ echo 'TODO: Add contents for README' > README
+  [yogi@CentOS tom_repo]$ git status -s
+  ?? README
+  
+  [yogi@CentOS tom_repo]$ git add .
+
+  [yogi@CentOS tom_repo]$ git status -s
+  A README
+
+  [yogi@CentOS tom_repo]$ git commit -m 'Initial commit'
+
+
+The above command will produce the following result.
+
+.. code-block:: bash
+
+  [master (root-commit) 19ae206] Initial commit
+  1 files changed, 1 insertions(+), 0 deletions(-)
+  create mode 100644 README
+  
+yogi checks the log message by executing the git log command.
+
+.. code-block:: bash
+
+  [yogi@CentOS tom_repo]$ git log
+  The above command will produce the following result.
+
+  commit 19ae20683fc460db7d127cf201a1429523b0e319
+  Author: Yogi Bear <yogi@jellystone.com>
+  Date: Wed Feb 11 07:32:56 2018 +0530
+
+  Initial commit
+  
+
+Yogi committed his changes to the local repository. Now, it’s time to push the changes to the remote repository. But before that, we have to add the repository as a remote, this is a one-time operation. After this, yogi can safely push the changes to the remote repository.
+
+.. note:: By default, Git pushes only to matching branches: For every branch that exists on the local side, the remote side is updated if a branch with the same name already exists there. In our tutorials, every time we push changes to the origin master branch, use appropriate branch name according to your requirement.
