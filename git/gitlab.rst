@@ -200,4 +200,57 @@ This information is used by Git commits.
 
   [booboo@CentOS project]$ git config --global user.email "you@someemaildomain.com"
 
+Avoid merge commits for pulling
+===============================
+You pull the latest changes from a remote repository, and if these changes are divergent, then by default Git creates merge commits. We can avoid this via following settings.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git config --global branch.autosetuprebase always
+  
+
+Color highlighting
+==================
+The following commands enable color highlighting for Git in the console.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git config --global color.ui true
+  [booboo@CentOS project]$ git config --global color.status auto
+  [booboo@CentOS project]$ git config --global color.branch auto
+
+
+Setting default editor
+======================
+By default, Git uses the system default editor, which is taken from the VISUAL or EDITOR environment variable. We can configure a different one by using git config.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git config --global core.editor vim
+  
+Setting default merge tool
+==========================
+Git does not provide a default merge tool for integrating conflicting changes into your working tree. We can set default merge tool by enabling following settings.\\
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git config --global merge.tool vimdiff
+  
+Listing Git settings
+====================
+To verify your Git settings of the local repository, use git config –list command as given below.
+
+.. code-block:: bash
+
+  [jerry@CentOS ~]$ git config --list
+   user.name=Jerry Mouse
+   user.email=jerry@tutorialspoint.com
+   push.default=nothing
+   branch.autosetuprebase=always
+   color.ui=true
+   color.status=auto
+   color.branch=auto
+   core.editor=vim
+   merge.tool=vimdiff
+ 
 
