@@ -67,6 +67,8 @@ Step 2 : User1 then adds the modified file(s) to the staging area.
 Step 3 : User1 performs a commit operation which moves the file(s) from the staging area. After a push operation, it persists the changes permanently to the Git repository.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/git/image1.png
+.. figure:: http://s3.nutanixtechsummit.com/git/image1.png
+
 
 Suppose you modified two files, namely *foo.c* and *foobar.c* and you want two different commits for each operation. You can add one file in the staging area and do commit. After the first commit, repeat the same procedure for another file.
 
