@@ -85,3 +85,74 @@ Suppose you modified two files, namely *foo.c* and *foobar.c* and you want two d
   [bash]$ git commit –m “Added foobar operation”
   
 
+Blobs
+=====
+Blob stands for Binary Large Object. File versions are represented by blob. Blobs contain file data (no metadata).  Git database, it's tagged as SHA1 hash of the file. 
+
+Trees
+=====
+Tree's are objects that represent a directory containing blobs and sub-directories. Tree's are binary files that contain
+references to blobs and trees which are also named as SHA1 hash of the tree object.
+
+Commits
+=======
+A Commit maintains the current state of the repository and named by SHA1 hash. You might consider a commit-object as a node within a linked list, where each commit object has a pointer to the parent commit object. For a given commit, you can traverse back by looking at the parent pointer to view the history of a commit. If a commit has multiple parent commits, then that particular commit has been created by merging two branches.
+
+Branches
+========
+Branches are used to create an alternate development stream. By default, Git maintains a master branch (a.k.a trunk). Branches are typically created to control workflow (i.e. a new feature or update). Once the feature or update is completed, it's merged with the master (trunk) branch. Every branch is referenced by HEAD, which points to the current commit within the branch. When commits are submitted, the HEAD pointer is updated to reflect the latest commit.
+
+Tags
+====
+Tag's are used to assign meaningful names within a specific version of a repository. Tags are similar to branches, but are immutable - which implies a branch with no modification. Once a tag is created for a particular commit, even if you create a new commit, it will not be updated. Tags are typically used for product releases.
+
+Clone
+=====
+Clones create a repository instance. Clone operations check-out working copies, as well as mirror the repository locally. Users can then perform multple operations on the local repository, followed by a pull (synchronizing distributed/cloned repositories over a network).
+
+Pull
+====
+Pull operations copy changes from a remote repository instance to a local instance. The pull operation is used for synchronization between two repository instances.
+
+Push
+====
+Push operations copy changes from a local repository instance to a remote instance, and is used to persist changes in a Git repository. 
+
+HEAD
+====
+HEAD is a pointer, which points to the latest commit within a branch. Whenever you make a commit, HEAD is updated with the latest commit and are stored in **.git/refs/heads/** directory.
+
+.. code-block:: bash
+  
+  [NTNX CentOS]$ ls .git/refs/heads/
+  master
+
+  [NTNX CentOS]$ cat .git/refs/heads/master
+  2348387fded58fa4deadbeef6c21344ceda0289
+
+Revision
+========
+Revisions represent the version of the source code. Revisions in Git are triggered by commits identified by SHA1 secure hashes.
+
+URL
+===
+URLs represent the Git repository location. Git URLs are stored in the config file.
+
+.. clode-block:: bash
+
+  [NTNX CentOS foo_repo]$ pwd
+  /home/foo/foo_repo
+
+  [NTNX CentOS foo_repo]$ cat .git/config
+  [core]
+  repositoryformatversion = 1
+  filemode = true
+  bare = false
+  logallrefupdates = true
+  [remote "origin"]
+  url = gituser@git.server.com:project.git
+  fetch = +refs/heads/*:refs/remotes/origin/*
+  
+  
+  
+  
