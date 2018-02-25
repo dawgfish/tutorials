@@ -139,10 +139,10 @@ HEAD is a pointer, which points to the latest commit within a branch. Whenever y
 .. code-block:: bash
   
   [NTNX CentOS]$ ls .git/refs/heads/
-  master
+   master
 
   [NTNX CentOS]$ cat .git/refs/heads/master
-  2348387fded58fa4deadbeef6c21344ceda0289
+   2348387fded58fa4deadbeef6c21344ceda0289
 
 Revision
 ========
@@ -152,7 +152,7 @@ URL
 ===
 URLs represent the Git repository location. Git URLs are stored in the config file.
 
-.. clode-block:: bash
+.. code-block:: bash
 
   [NTNX CentOS foo_repo]$ pwd
   /home/foo/foo_repo
