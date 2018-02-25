@@ -267,8 +267,8 @@ To verify your Git settings of the local repository, use git config –list comm
   core.editor=vim
   merge.tool=vimdiff
  
-Creating a GitServer:
-*********************
+Create Operation:
+*****************
 In this section, we'll create a remote Git repository/Git Server. We need a Git server to allow team collaboration.
 
 Create New User
@@ -450,7 +450,161 @@ yogi checks the log message by executing the git log command.
 
   Initial commit
   
-
 Yogi committed his changes to the local repository. Now, it’s time to push the changes to the remote repository. But before that, we have to add the repository as a remote, this is a one-time operation. After this, yogi can safely push the changes to the remote repository.
 
 .. note:: By default, Git pushes only to matching branches: For every branch that exists on the local side, the remote side is updated if a branch with the same name already exists there. In our tutorials, every time we push changes to the origin master branch, use appropriate branch name according to your requirement.
+
+.. code-block:: bash
+
+  [yogi@CentOS yogi_repo]$ git remote add origin gituser@git.server.com:project.git
+  [yogi@CentOS yogi_repo]$ git push origin master
+  
+The above command will produce the following result.
+
+.. code-block:: bash
+
+  Counting objects: 3, done.
+  Writing objects: 100% (3/3), 242 bytes, done.
+  Total 3 (delta 0), reused 0 (delta 0)
+  To gituser@git.server.com:project.git
+  * [new branch]
+  master −> master
+  
+Now, the changes are successfully committed to the remote repository.
+
+Clone Operation:
+****************
+We now have a bare repository on the Git server and yogi pushed his first version. Now, booboo can view his changes. The Clone operation creates an instance of the remote repository.
+
+booboo creates a new directory in his home directory and performs the clone operation.
+
+.. code-block:: bash
+
+  [booboo@CentOS ~]$ mkdir booboo_repo
+  [booboo@CentOS ~]$ cd booboo_repo/
+  [booboo@CentOS booboo_repo]$ git clone gituser@git.server.com:project.git
+  
+The above command will produce the following result.
+
+.. code-block:: bash
+
+  Initialized empty Git repository in /home/booboo/booboo_repo/project/.git/
+  remote: Counting objects: 3, done.
+  Receiving objects: 100% (3/3), 241 bytes, done.
+  remote: Total 3 (delta 0), reused 0 (delta 0)
+
+booboo changes the directory to new local repository and lists its directory contents.
+
+.. code-block:: bash
+
+  [booboo@CentOS booboo_repo]$ cd project/
+  [booboo@CentOS booboo_repo]$ ls
+  README
+
+
+Add Operation:
+**************
+booboo has successfully cloned the repository and decides to add a file. So he creates file booboo.md using his favorite editor - the file contents, booboo.md will look like as follows:
+
+.. code-block:: bash
+
+  #booboo's file
+
+booboo saves the file and now he can safely add it to the repository.
+
+The Git *add* operation adds the file to the staging area.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git status -s
+  ?? booboo
+  ?? booboo.md
+
+  [booboo@CentOS project]$ git add booboo.md
+  
+Git is showing question marks (??) before the file names because these files are not a part of Git, and Git does not know what to do with them. 
+
+booboo has added the file to the staging area - git *status* command will show files present in the staging area.
+
+.. code-block:: bash
+
+  [jerry@CentOS project]$ git status -s
+  A booboo.md
+  ?? booboo
+
+To commit the changes, booboo will use the git *commit* command followed by –m option. If we omit –m option. Git will open a text editor where we can write multiline commit message.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git commit -m 'Published booboo.md file'
+
+The above command will produce the following result:
+
+.. code-block:: bash
+
+  [master cbe1249] Implemented my_strlen function
+  1 files changed, 24 insertions(+), 0 deletions(-)
+  create mode 100644 string.c
+
+After commit to view log details, he runs the git log command. It will display the information of all the commits with their commit ID, commit author, commit date and SHA-1 hash of commit.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git log
+
+The above command will produce the following result:
+
+.. code-block:: bash
+
+  commit cbe1249b140dad24b2c35b15cc7e26a6f02d2277
+  Author: booboo bear <booboo@jellystone.com>
+  Date: Wed Feb 11 08:05:26 2018 +0530
+
+  Published booboo.md file
+
+
+  commit 19ae20683fc460db7d127cf201a1429523b0e319
+  Author: yogi bear <yogi@jellystone.com>
+  Date: Wed Feb 11 07:32:56 2018 +0530
+
+  Initial commit
+  
+
+Push Operation:
+***************
+booboo added a new file to the repository and commited has updates/changes and is ready to push operation. The Push operation stores data permanently to the Git repository allowing other project team members to see booboo's changes.
+
+Prior to pushing his changes he wants to view the updates by:
+
+1. Viewing the log history:
+
+.. code-block:: bash
+
+  [jerry@CentOS project]$ git log
+  commit d1e19d316224cddc437e3ed34ec3c931ad803958
+  Author: Jerry Mouse <jerry@tutorialspoint.com>
+  Date: Wed Feb 11 08:05:26 2018 +0530
+  
+2. Viewing the contents:
+
+.. code-block:: bash
+
+  [jerry@CentOS project]$ git show d1e19d316224cddc437e3ed34ec3c931ad803958
+  commit d1e19d316224cddc437e3ed34ec3c931ad803958
+  Author: booboo bear <booboo@jellystone.com>
+  Date: Wed Feb 11 08:05:26 2018 +0530
+  
+booboo is happy with his contents and he is ready to push his changes.
+
+.. code-block:: bash
+
+  [booboo@CentOS project]$ git push origin master
+  Counting objects: 4, done.
+  Compressing objects: 100% (3/3), done.
+  Writing objects: 100% (3/3), 517 bytes, done.
+  Total 3 (delta 0), reused 0 (delta 0)
+  To gituser@git.server.com:project.git
+  19ae206..d1e19d3 master −> master
+
+booboo's changes have been successfully pushed to the repository; now other team members can view his changes by performing clone or update operation.
+
