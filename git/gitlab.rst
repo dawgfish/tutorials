@@ -256,9 +256,9 @@ To verify your Git settings of the local repository, use git config –list comm
 
 .. code-block:: bash
 
-  [jerry@CentOS ~]$ git config --list
-  user.name=Jerry Mouse
-  user.email=jerry@tutorialspoint.com
+  [booboo@CentOS ~]$ git config --list
+  user.name=booboo bear
+  user.email=booboo@jellystone.com
   push.default=nothing
   branch.autosetuprebase=always
   color.ui=true
