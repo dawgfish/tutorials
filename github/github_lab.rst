@@ -56,4 +56,4 @@ To create a new branch:
 - Type a branch name, readme-edits, into the new branch text box.
 - Select the blue Create branch box or hit “Enter” on your keyboard.
 
-https://guides.github.com/activities/hello-world/readme-edits.gif
+.. figure:: https://guides.github.com/activities/hello-world/readme-edits.gif
