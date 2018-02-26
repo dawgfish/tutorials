@@ -339,9 +339,9 @@ We'll initialize a new repository by using *init* command followed by *--bare* o
 
 Generate Public/Private RSA Key Pair
 ====================================
-We'll step through the process of configuring ssh keys and addin gthem to the Git-Server.
+We'll step through the process of configuring ssh keys and add them to the Git-Server for each user.
 
-Login to each Guest VM for the assigned user (i.e. yogi and booboo) and create the ssh-keys and push them to the Git-Server:
+*SSH* to each Guest VM for the assigned user (i.e. yogi:10.21.X.51 and booboo:10.21.X.52), create the users ssh-keys, and  push them to the Git-Server:
 
 **Guest VM:** 10.21.X.51 (User Yogi)
 
