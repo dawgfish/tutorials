@@ -13,21 +13,6 @@ The Lab will help beginners learn the basic functionality of Git version control
 
 This lab assumes participants are going to use Git to handle various projects. It's good to have some exposure to software development life cycle and working knowledge of application development but not required.
 
-Workflows:
-**********
-General workflows are as follows:
-
-- You clone the Git repository as a working copy.
-- You modify the working copy by adding/editing files.
-- If necessary, you also update the working copy by taking other developer's changes.
-- You review the changes before commit.
-- You commit changes. If everything is fine, then you push the changes to the repository.
-- After committing, if you realize something is wrong, then you correct the last commit	and push the changes to the repository.
-- Shown below is the pictorial representation of the work-flow.
-
-
-.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/git/image2.png
-
 Basic Concepts:
 ***************
 Version Control System (VCS) is software that helps software developers work together and maintain a complete history of their work.
@@ -167,7 +152,19 @@ URLs represent the Git repository location. Git URLs are stored in the config fi
   url = gituser@git.server.com:project.git
   fetch = +refs/heads/*:refs/remotes/origin/*
   
-  
+Workflows:
+**********
+General workflows are as follows:
+
+- You clone the Git repository as a working copy.
+- You modify the working copy by adding/editing files.
+- If necessary, you also update the working copy by taking other developer's changes.
+- You review the changes before commit.
+- You commit changes. If everything is fine, then you push the changes to the repository.
+- After committing, if you realize something is wrong, then you correct the last commit	and push the changes to the repository.
+- Shown below is the pictorial representation of the work-flow.
+
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/git/image2.png
   
 Setup Lab Environment
 *********************
