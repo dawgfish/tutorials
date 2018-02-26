@@ -57,7 +57,7 @@ To create a new branch:
 - Select the blue Create branch box or hit “Enter” on your keyboard.
 
 .. figure:: https://guides.github.com/activities/hello-world/readme-edits.gif
-.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image5.gif
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image10.gif
 
 Now you have two branches, master and readme-edits. They look exactly the same, but not for long! Next we’ll add our changes to the new branch.
 
