@@ -523,13 +523,13 @@ booboo changes the directory to new local repository and lists its directory con
 .. code-block:: bash
 
   [booboo@CentOS booboo_repo]$ cd project/
-  [booboo@CentOS booboo_repo]$ ls
+  [booboo@CentOS project]$ ls
    README
 
 
 Add Operation:
 **************
-booboo has successfully cloned the repository and decides to add a file. So he creates file booboo.md using his favorite editor - the file contents, booboo.md will look like as follows:
+booboo has successfully cloned the repository and decides to add a file. So he creates file booboo.md using his favorite editor.  The contents for file booboo.md is as follows:
 
 .. code-block:: bash
 
@@ -555,13 +555,12 @@ booboo has added the file to the staging area - git *status* command will show f
 
   [booboo@CentOS project]$ git status -s
   A booboo.md
-  ?? booboo
 
 To commit the changes, booboo will use the git *commit* command followed by –m option. If we omit –m option. Git will open a text editor where we can write multiline commit message.
 
 .. code-block:: bash
 
-  [booboo@CentOS project]$ git commit -m 'Published booboo.md file'
+  [booboo@CentOS project]$ git commit -m 'Publish booboo's file'
 
 The above command will produce the following result:
 
@@ -571,7 +570,7 @@ The above command will produce the following result:
   1 files changed, 24 insertions(+), 0 deletions(-)
   create mode 100644 string.c
 
-After commit to view log details, he runs the git log command. It will display the information of all the commits with their commit ID, commit author, commit date and SHA-1 hash of commit.
+After commit, booboo can view log details, by executing the git log command. It will display the information of all the commits with their commit ID, commit author, commit date and SHA-1 hash of commit.
 
 .. code-block:: bash
 
@@ -585,7 +584,7 @@ The above command will produce the following result:
   Author: booboo bear <booboo@jellystone.com>
   Date: Wed Feb 11 08:05:26 2018 +0530
 
-  Published booboo.md file
+  Publish booboo's file
 
 
   commit 19ae20683fc460db7d127cf201a1429523b0e319
@@ -617,7 +616,18 @@ Prior to pushing his changes he wants to view the updates by:
   [booboo@CentOS project]$ git show d1e19d316224cddc437e3ed34ec3c931ad803958
   commit d1e19d316224cddc437e3ed34ec3c931ad803958
   Author: booboo bear <booboo@jellystone.com>
-  Date: Wed Feb 11 08:05:26 2018 +0530
+  Date:   Wed Feb 11 17:55:13 2018 -0800
+
+    Publish booboo's file
+
+  diff --git a/booboo.md b/booboo.md
+  new file mode 100644
+  index 0000000..4c861b1
+  --- /dev/null
+  +++ b/booboo.md
+  @@ -0,0 +1 @@
+  +#booboo is smarter than the average bear.
+
   
 3. Push the changes.
 
