@@ -95,7 +95,7 @@ You can even open pull requests in your own repository and merge them yourself. 
 +--------------------------------------------+-------------------------------------------------------------------------------------------------+
 |                                            |                                                                                                 |
 |Click the Pull Request tab, then from the   |                                                                                                 |
-|Pull Request page, click the green New.     |.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image5.gif       | 
+|Pull Request page, click the green New.     |.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image5.gif        | 
 |pull request button.                        |                                                                                                 |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------+
 |In the Example Comparisons box, select the  |                                                                                                 |
