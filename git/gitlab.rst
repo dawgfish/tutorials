@@ -219,6 +219,7 @@ Once Git installation has completed check the version:
 Create the users for each Guest VM:
 
 **Guest VM:** 10.21.X.50 (Git Server)
+
 .. code-block:: bash
 
   [root@CentOS ~]# groupadd dev
@@ -231,6 +232,7 @@ Create the users for each Guest VM:
   [root@CentOS]# 
 
 **Guest VM:** 10.21.X.51 (User Yogi)
+
 .. code-block:: bash
     
   [root@CentOS]# adduser yogi
@@ -243,6 +245,7 @@ Create the users for each Guest VM:
    [root@CentOS]# logout
    
 **Guest VM:** 10.21.X.52 (User booboo)
+
 .. code-block:: bash
     
   [root@CentOS]# adduser booboo
@@ -262,6 +265,7 @@ Git provides the git config tool, which allows you to set configuration variable
 Login to each Guest VM for the assigned user and set the following git paramaters:
 
 **Guest VM:** 10.21.X.51 (User Yogi)
+
 .. code-block:: bash
 
   [yogi@CentOS]$ git config --global user.name "yogi bear"
@@ -285,6 +289,7 @@ Login to each Guest VM for the assigned user and set the following git paramater
   merge.tool=vimdiff
 
 **Guest VM:** 10.21.X.52 (User booboo)
+
 .. code-block:: bash
 
   [booboo@CentOS]$ git config --global user.name "booboo bear"
