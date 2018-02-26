@@ -710,8 +710,8 @@ Add the modified file, *commit* the changes, and check the git-log for status.
 
 .. code-block:: bash
 
-  [yogi@yogi project]$ git add booboo.md
-  [yogi@yogi project]$ git commit -m 'Corrected: Yogi is the smartest bear'
+  [yogi@CentOS project]$ git add booboo.md
+  [yogi@CetnOS project]$ git commit -m 'Corrected: Yogi is the smartest bear'
   [master 109328f] Corrected: Yogi is the smartest bear
    1 file changed, 1 insertion(+), 1 deletion(-)
    
