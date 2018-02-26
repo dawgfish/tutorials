@@ -643,3 +643,111 @@ Prior to pushing his changes he wants to view the updates by:
 
 booboo's changes have been successfully pushed to the repository; now other team members can view his changes by performing clone or update operation.
 
+Update Operation
+****************
+Logged in as *yogi* on host:10.21.X.51 execute the *clone* operation from the */home/yogi/* directory.
+
+.. code-block:: bash
+
+  [yogi@CentOS ~]$ git clone gituser@10.21.X.50:project.git
+  Cloning into 'project'...
+  remote: Counting objects: 6, done.
+  remote: Compressing objects: 100% (3/3), done.
+  remote: Total 6 (delta 0), reused 0 (delta 0)
+  Receiving objects: 100% (6/6), done.
+
+Change directories to the new/updated *project* folder and execute *ls*
+
+.. code-block:: bash 
+
+  [yogi@CentOS project]$ cd project
+  [yogi@CentOS project]$ ls
+  booboo.md  README
+  [yogi@CentOS project]$ 
+
+Execute the git *log* command:
+
+.. code-block:: bash 
+
+  [yogi@CentOS project]$ git log
+  commit 4c6f875bae08459055de8b8301d2dd52f2190c6b
+  Author: booboo bear <booboo@jellystone.com>
+  Date:   Sun Feb 25 17:55:13 2018 -0800
+
+      Publish booboo's file
+
+  commit aacd700320437b39e11e83dac2e5dd154fd38bdd
+  Author: yogi bear <yogi@jellystone.com>
+  Date:   Sun Feb 25 16:59:57 2018 -0800
+
+      initial commit
+
+yogi can now see the changes made earlier by booboo.
+
+Modify/replace the contents in the file *booboo.md* with *#yogi is smarter than the average bear.*  using *vi* and save the contents.
+
+Execute a diff on the repository.  It should appear similar as follows:
+
+.. code-block:: bash
+
+  [yogi@CentOS project]$ git diff
+  diff --git a/booboo.md b/booboo.md
+  index 4c861b1..528c627 100644
+  --- a/booboo.md
+  +++ b/booboo.md
+  @@ -1 +1 @@
+  -#booboo is smarter than the average bear.
+  +#yogi is smarter than the average bear.
+
+View the status of the repository to show the file was modified (M):
+
+.. code-block:: bash
+
+  [yogi@CentOS ~]$ git status -s
+  M booboo.md
+  
+Add the modified file, *commit* the changes, and check the git-log for status.
+
+.. code-block:: bash
+
+  [yogi@yogi project]$ git add booboo.md
+  [yogi@yogi project]$ git commit -m 'Corrected: Yogi is the smartest bear'
+  [master 109328f] Corrected: Yogi is the smartest bear
+   1 file changed, 1 insertion(+), 1 deletion(-)
+   
+  [yogi@CentOS project]$ git log
+  commit 109328f78754dd98c6a98e0c356082dccce25186
+  Author: yogi bear <yogi@jellystone.com>
+  Date:   Sun Feb 25 19:50:27 2018 -0800
+
+      Corrected: Yogi is the smartest bear
+
+  commit 4c6f875bae08459055de8b8301d2dd52f2190c6b
+  Author: booboo bear <booboo@jellystone.com>
+  Date:   Sun Feb 25 17:55:13 2018 -0800
+
+      Publish booboo's file
+
+  commit aacd700320437b39e11e83dac2e5dd154fd38bdd
+  Author: yogi bear <yogi@jellystone.com>
+  Date:   Sun Feb 25 16:59:57 2018 -0800
+
+      initial commit
+      
+And finally push it to the branch:
+
+.. code-block:: bash
+
+  [yogi@CentOS project]$ git push origin master
+  Counting objects: 5, done.
+  Delta compression using up to 2 threads.
+  Compressing objects: 100% (2/2), done.
+  Writing objects: 100% (3/3), 327 bytes | 0 bytes/s, done.
+  Total 3 (delta 0), reused 0 (delta 0)
+  To gituser@10.68.69.52:project.git
+     4c6f875..109328f  master -> master
+
+  
+
+  
+
