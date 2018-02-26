@@ -108,7 +108,7 @@ You can even open pull requests in your own repository and merge them yourself. 
 |want to submit.                             |.. figure:: https://guides.github.com/activities/hello-world/diff.png         |
 |                                            |                                                                              |
 +--------------------------------------------+------------------------------------------------------------------------------+
-| When you’re satisfied that these are the   |                                                                              |
+|When you’re satisfied that these are the    |                                                                              |
 |changes you want to submit, click the big   |.. figure:: https://guides.github.com/activities/hello-world/create-pr.png    |
 |green Create Pull Request button.           |                                                                              |
 |                                            |                                                                              |
