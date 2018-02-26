@@ -176,7 +176,8 @@ Create Guest VMs
 ================
 Create 3x CentOS Guest VMs using the cluster's configured network.
 
-**Git Server:**
+**[Git Server]**
+
 - VM Name: CentOS
 - Image: CentOS QCOW2
 - vCPU:2
@@ -184,7 +185,8 @@ Create 3x CentOS Guest VMs using the cluster's configured network.
 - Mem: 4GiB
 - IP Address: 10.21.X.50
 
-**User yogi:**
+**[User yogi]**
+
 - VM Name: CentOS
 - Image: CentOS QCOW2
 - vCPU:2
@@ -192,7 +194,8 @@ Create 3x CentOS Guest VMs using the cluster's configured network.
 - Mem: 4GiB
 - IP Address: 10.21.X.51
 
-**User booboo:**
+**[User booboo]**
+
 - VM Name: CentOS
 - Image: CentOS QCOW2
 - vCPU:2
