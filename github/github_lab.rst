@@ -91,7 +91,7 @@ By using GitHub’s @mention system in your pull request message, you can ask fo
 You can even open pull requests in your own repository and merge them yourself. It’s a great way to learn the GitHub Flow before working on larger projects.
 
 +--------------------------------------------+------------------------------------------------------------------------------+
-|             STEPS                          |                             SCFREENSHOT .                                    |
+|             STEPS                          |                             SCREENSHOT                                       |
 +--------------------------------------------+------------------------------------------------------------------------------+
 |                                            |                                                                              |
 |Click the Pull Request tab, then from the   |                                                                              |
@@ -103,15 +103,22 @@ You can even open pull requests in your own repository and merge them yourself. 
 |with master (the original)                  |.. figure:: https://guides.github.com/activities/hello-world/pick-branch.png  | 
 |master (the original)                       |                                                                              |
 +--------------------------------------------+------------------------------------------------------------------------------+
+|Look over your changes in the diffs on the  |                                                                              |
+|Compare page, make sure they’re what you    |                                                                              |
+|want to submit.                             |.. figure:: https://guides.github.com/activities/hello-world/diff.png         |
+|                                            |                                                                              |
++--------------------------------------------+------------------------------------------------------------------------------+
+| When you’re satisfied that these are the   |                                                                              |
+|changes you want to submit, click the big   |.. figure:: https://guides.github.com/activities/hello-world/create-pr.png    |
+|green Create Pull Request button.           |                                                                              |
+|                                            |                                                                              |
++--------------------------------------------+------------------------------------------------------------------------------+
+|                                            |                                                                              |
+|Give your pull request a title and write a  |.. figure:: https://guides.github.com/activities/hello-world/pr-form.png      |
+|brief description of your changes.          |                                                                              |
+|                                            |                                                                              |
++--------------------------------------------+------------------------------------------------------------------------------+
 
-
-2. In the Example Comparisons box, select the branch you made, readme-edits, to compare with master (the original).
-
-3. Look over your changes in the diffs on the Compare page, make sure they’re what you want to submit.
-
-4. When you’re satisfied that these are the changes you want to submit, click the big green Create Pull Request button.
-
-5. Give your pull request a title and write a brief description of your changes.
 
 When you’re done with your message, click Create pull request!
 
