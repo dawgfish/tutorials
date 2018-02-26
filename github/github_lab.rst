@@ -56,7 +56,6 @@ To create a new branch:
 - Type a branch name, readme-edits, into the new branch text box.
 - Select the blue Create branch box or hit “Enter” on your keyboard.
 
-.. figure:: https://guides.github.com/activities/hello-world/readme-edits.gif
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image10.gif
 
 Now you have two branches, master and readme-edits. They look exactly the same, but not for long! Next we’ll add our changes to the new branch.
@@ -91,34 +90,34 @@ By using GitHub’s @mention system in your pull request message, you can ask fo
 
 You can even open pull requests in your own repository and merge them yourself. It’s a great way to learn the GitHub Flow before working on larger projects.
 
-+--------------------------------------------+------------------------------------------------------------------------------+
-|             STEPS                          |                             SCREENSHOT                                       |
-+--------------------------------------------+------------------------------------------------------------------------------+
-|                                            |                                                                              |
-|Click the Pull Request tab, then from the   |                                                                              |
-|Pull Request page, click the green New.     |.. figure:: https://guides.github.com/activities/hello-world/pr-tab.gif       | 
-|pull request button.                        |                                                                              |
-+--------------------------------------------+------------------------------------------------------------------------------+
-|In the Example Comparisons box, select the  |                                                                              |
-|branch you made, readme-edits, to compare   |                                                                              |
-|with master (the original)                  |.. figure:: https://guides.github.com/activities/hello-world/pick-branch.png  | 
-|master (the original)                       |                                                                              |
-+--------------------------------------------+------------------------------------------------------------------------------+
-|Look over your changes in the diffs on the  |                                                                              |
-|Compare page, make sure they’re what you    |                                                                              |
-|want to submit.                             |.. figure:: https://guides.github.com/activities/hello-world/diff.png         |
-|                                            |                                                                              |
-+--------------------------------------------+------------------------------------------------------------------------------+
-|When you’re satisfied that these are the    |                                                                              |
-|changes you want to submit, click the big   |.. figure:: https://guides.github.com/activities/hello-world/create-pr.png    |
-|green Create Pull Request button.           |                                                                              |
-|                                            |                                                                              |
-+--------------------------------------------+------------------------------------------------------------------------------+
-|                                            |                                                                              |
-|Give your pull request a title and write a  |.. figure:: https://guides.github.com/activities/hello-world/pr-form.png      |
-|brief description of your changes.          |                                                                              |
-|                                            |                                                                              |
-+--------------------------------------------+------------------------------------------------------------------------------+
++--------------------------------------------+-------------------------------------------------------------------------------------------------+
+|             STEPS                          |                             SCREENSHOT                                                          |
++--------------------------------------------+-------------------------------------------------------------------------------------------------+
+|                                            |                                                                                                 |
+|Click the Pull Request tab, then from the   |                                                                                                 |
+|Pull Request page, click the green New.     |.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image5.gif       | 
+|pull request button.                        |                                                                                                 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------+
+|In the Example Comparisons box, select the  |                                                                                                 |
+|branch you made, readme-edits, to compare   |                                                                                                 |
+|with master (the original)                  |.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image6.png        | 
+|master (the original)                       |                                                                                                 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------+
+|Look over your changes in the diffs on the  |                                                                                                 |
+|Compare page, make sure they’re what you    |                                                                                                 |
+|want to submit.                             |.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image7.png        |
+|                                            |                                                                                                 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------+
+|When you’re satisfied that these are the    |                                                                                                 |
+|changes you want to submit, click the big   |.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image8.png        |
+|green Create Pull Request button.           |                                                                                                 |
+|                                            |                                                                                                 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------+
+|                                            |                                                                                                 |
+|Give your pull request a title and write a  |.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image9.png        |
+|brief description of your changes.          |                                                                                                 |
+|                                            |                                                                                                 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 
 When you’re done with your message, click Create pull request!
