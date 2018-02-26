@@ -501,7 +501,7 @@ Clone Operation:
 We now have a bare repository on the Git server and yogi pushed his first version. Now, booboo can view his changes. The Clone operation creates an instance of the remote repository.
 
 
-With booboo logged into his server (10.21.X.52), he creates a new directory in his home directory and performs the clone operation.
+With booboo logged into his server (10.21.X.52), he creates a new directory *booboo_repo* in his */home* directory and performs the *clone* operation.
 
 .. code-block:: bash
 
