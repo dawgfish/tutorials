@@ -21,7 +21,7 @@ Create a Repsitory:
 - Write a short description.
 - Select Initialize this repository with a README.
 
-[IMAGE]
+https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image1.png
 
 Create a Branch:
 ****************
