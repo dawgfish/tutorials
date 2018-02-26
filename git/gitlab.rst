@@ -169,94 +169,134 @@ URLs represent the Git repository location. Git URLs are stored in the config fi
   
   
   
-Install Git:
-************
+Setup Lab Environment
+*********************
 
-Create a CentOS Guest VM using the cluster's configured network.
+Create Guest VMs
+================
+Create 3x CentOS Guest VMs using the cluster's configured network.
 
-Login to the CentOS Guest VM and use *yum* to install git as follows:
+**Git Server:**
+- VM Name: CentOS
+- Image: CentOS QCOW2
+- vCPU:2
+- Cores/vCPU: 1
+- Mem: 4GiB
+- IP Address: 10.21.X.50
+
+**User yogi:**
+- VM Name: CentOS
+- Image: CentOS QCOW2
+- vCPU:2
+- Cores/vCPU: 1
+- Mem: 4GiB
+- IP Address: 10.21.X.51
+
+**User booboo:**
+- VM Name: CentOS
+- Image: CentOS QCOW2
+- vCPU:2
+- Cores/vCPU: 1
+- Mem: 4GiB
+- IP Address: 10.21.X.52
+
+Install git
+===========
+Power up each VM.  With each of the Guest VM's powered up and booted to runlevel 5, ssh to each Guest VM as *root* and use *yum* to install git as follows:
 
 .. code-block:: bash
 
-  [CentOS ~]$
-   su -
-   Password: *******
+  [root@CentOS]$ yum -y install git-core
 
-  [CentOS ~]# yum -y install git-core
+Once Git installation has completed check the version:
 
-  [CentOS ~]# git --version
-  git version 1.7.1
+.. code-block:: bash
+    
+  [root@CentOS]$ git --version
+  git version 1.8.X.X
+  [root@CentOS]$ 
+  
+Create the users for each Guest VM:
 
+**Guest VM:** 10.21.X.50 (Git Server)
+.. code-block:: bash
+
+  [root@CentOS ~]# groupadd dev
+  [root@CentOS ~]# useradd -G devs -d /home/gituser -m -s /bin/bash gituser
+  [root@CentOS ~]# passwd gituser
+   Changing password for user gituser.
+   New password:        <--------------------------------- set to nutanix/4u
+   Retype new password: <--------------------------------- set to nutanix/4u
+   passwd: all authentication token updated successfully.
+  [root@CentOS]# 
+
+**Guest VM:** 10.21.X.51 (User Yogi)
+.. code-block:: bash
+    
+  [root@CentOS]# adduser yogi
+  [root@CentOS]# passwd yogi
+  [root@CentOS]# passwd yogi
+   Changing password for user yogi.
+   New password:        <--------------------------------- set to nutanix/4u
+   Retype new password: <--------------------------------- set to nutanix/4u
+   passwd: all authentication tokens updated successfully
+   [root@CentOS]# logout
+   
+**Guest VM:** 10.21.X.52 (User booboo)
+.. code-block:: bash
+    
+  [root@CentOS]# adduser booboo
+  [root@CentOS]# passwd booboo
+  [root@CentOS]# passwd booboo
+   Changing password for user booboo.
+   New password:        <--------------------------------- set to nutanix/4u
+   Retype new password: <--------------------------------- set to nutanix/4u
+   passwd: all authentication tokens updated successfully
+   [root@CentOS]# logout
+   
 
 Customize Git Environment:
 **************************
-Git provides the git config tool, which allows you to set configuration variables. Git stores all global configurations in *.gitconfig* file, which is located in the users home directory. To set these configuration values as global, add the *--global* option.  
+Git provides the git config tool, which allows you to set configuration variables. Git stores all global configurations in */home/<user>/.gitconfig* file, located in the users home directory. To set these configuration values as global, add the *--global* option.  
 
-**Note:** if you omit the *--global* option, then your configurations are specific for the current Git repository.
+Login to each Guest VM for the assigned user and set the following git paramaters:
 
-You can also set up system wide configuration. Git stores these values in the */etc/gitconfig* file, which contains the configuration for every user and repository on the system. To set these values, you must have *root* privledges and use the *--system* option.
-
-When the above code is compiled and executed, it produces the following result:
-
-Setting username
-================
-This information is used by Git commits.
-
+**Guest VM:** 10.21.X.51 (User Yogi)
 .. code-block:: bash
 
-  [booboo@CentOS project]$ git config --global user.name "booboo bear"
+  [yogi@CentOS]$ git config --global user.name "yogi bear"
+  [yogi@CentOS]$ git config --global user.email "yogi@jellystone.com"
+  [yogi@CentOS]$ git config --global branch.autosetuprebase always
+  [yogi@CentOS]$ git config --global color.ui true
+  [yogi@CentOS]$ git config --global color.status auto
+  [yogi@CentOS]$ git config --global color.branch auto
+  [yogi@CentOS]$ git config --global core.editor vim
+  [yogi@CentOS]$ git config --global merge.tool vimdiff
   
-Setting email ID
-================
-This information is used by Git commits.
+  [yogi@CentOS project]$ git config --list
+  user.name=yogi bear
+  user.email=yogi@jellystone.com
+  push.default=nothing
+  branch.autosetuprebase=always
+  color.ui=true
+  color.status=auto
+  color.branch=auto
+  core.editor=vim
+  merge.tool=vimdiff
 
+**Guest VM:** 10.21.X.52 (User booboo)
 .. code-block:: bash
 
-  [booboo@CentOS project]$ git config --global user.email "you@someemaildomain.com"
-
-Avoid merge commits for pulling
-===============================
-You pull the latest changes from a remote repository, and if these changes are divergent, then by default Git creates merge commits. We can avoid this via following settings.
-
-.. code-block:: bash
-
-  [booboo@CentOS project]$ git config --global branch.autosetuprebase always
+  [booboo@CentOS]$ git config --global user.name "booboo bear"
+  [booboo@CentOS]$ git config --global user.email "booboo@jellystone.com"
+  [booboo@CentOS]$ git config --global branch.autosetuprebase always
+  [booboo@CentOS]$ git config --global color.ui true
+  [booboo@CentOS]$ git config --global color.status auto
+  [booboo@CentOS]$ git config --global color.branch auto
+  [booboo@CentOS]$ git config --global core.editor vim
+  [booboo@CentOS]$ git config --global merge.tool vimdiff
   
-
-Color highlighting
-==================
-The following commands enable color highlighting for Git in the console.
-
-.. code-block:: bash
-
-  [booboo@CentOS project]$ git config --global color.ui true
-  [booboo@CentOS project]$ git config --global color.status auto
-  [booboo@CentOS project]$ git config --global color.branch auto
-
-
-Setting default editor
-======================
-By default, Git uses the system default editor, which is taken from the VISUAL or EDITOR environment variable. We can configure a different one by using git config.
-
-.. code-block:: bash
-
-  [booboo@CentOS project]$ git config --global core.editor vim
-  
-Setting default merge tool
-==========================
-Git does not provide a default merge tool for integrating conflicting changes into your working tree. We can set default merge tool by enabling following settings.\\
-
-.. code-block:: bash
-
-  [booboo@CentOS project]$ git config --global merge.tool vimdiff
-  
-Listing Git settings
-====================
-To verify your Git settings of the local repository, use git config –list command as given below.
-
-.. code-block:: bash
-
-  [booboo@CentOS ~]$ git config --list
+  [booboo@CentOS project]$ git config --list
   user.name=booboo bear
   user.email=booboo@jellystone.com
   push.default=nothing
@@ -266,6 +306,9 @@ To verify your Git settings of the local repository, use git config –list comm
   color.branch=auto
   core.editor=vim
   merge.tool=vimdiff
+
+  
+
  
 Create Operation:
 *****************
