@@ -21,7 +21,7 @@ Create a Repository:
 - Write a short description.
 - Select Initialize this repository with a README.
 
-.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image1.png
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image2.png
 
 Create a Branch:
 ****************
@@ -37,7 +37,7 @@ This diagram shows:
 - A new branch called feature (because we’re doing ‘feature work’ on this branch)
 - The journey that feature takes before it’s merged into master
 
-[IMAGE]
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image1.png
 
 Have you ever saved different versions of a file? Something like:
 
@@ -74,7 +74,7 @@ Make and commit changes:
 - Write a commit message that describes your changes.
 - Click Commit changes button.
 
-[IMAGE3}
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image3.png
 
 These changes will be made to just the README file on your readme-edits branch, so now this branch contains content that’s different from master.
 
@@ -113,7 +113,7 @@ In this final step, it’s time to bring your changes together – merging your 
 - Click Confirm merge.
 - Go ahead and delete the branch, since its changes have been incorporated, with the Delete branch button in the purple box.
 
-[IMAGE4]
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/github/image4.png
 
 Celebrate!
 ==========
