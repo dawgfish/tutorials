@@ -14,7 +14,7 @@ To complete this tutorial, you need a GitHub.com account and Internet access. Yo
 
 .. note:: Open this guide in a separate browser window (or tab) so you can see it while you complete the steps in the tutorial.
 
-Create a Repsitory:
+Create a Repository:
 *******************
 - In the upper right corner, next to your avatar or identicon, click + and then select New repository.
 - Name your repository hello-world.
