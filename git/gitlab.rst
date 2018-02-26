@@ -263,7 +263,7 @@ Customize Git Environment:
 **************************
 Git provides the git config tool, which allows you to set configuration variables. Git stores all global configurations in */home/<user>/.gitconfig* file, located in the users home directory. To set these configuration values as global, add the *--global* option.  
 
-Login to each Guest VM for the assigned user and set the following git paramaters:
+Login to each Guest VMs; *10.21.X.51* and *10.21.X.52* for the assigned users; *yogi* and *booboo* respectively and set the following git paramaters:
 
 **Guest VM:** 10.21.X.51 (User Yogi)
 
