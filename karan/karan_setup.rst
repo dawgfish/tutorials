@@ -16,7 +16,11 @@ This section is not applicable to external users/customers, since we cannot dist
 2. Upload the qcow2 image to the required nutanix cluster through image configuration in prism UI
 3. Provision the karan machine using the uploaded image by attaching a disk to the vm.
 4. Credentials:
--Username - administrator
--Password - nutanix/4u
+
+.. code-block:: bash
+
+  Username - administrator
+  Password - nutanix/4u
+
 5. Power on the vm and go to console and run the Karan_Config.ps1 script in desktop with powershell (Input parameter is the PC_IP/CALM_IP).
 
