@@ -17,6 +17,6 @@ This section is not applicable to external users/customers, since we cannot dist
 3. Provision the karan machine using the uploaded image by attaching a disk to the vm.
 4. Credentials:
   a.Username - administrator
-  b.Password - nutanix/4u
+    b.Password - nutanix/4u
 5. Power on the vm and go to console and run the Karan_Config.ps1 script in desktop with powershell (Input parameter is the PC_IP/CALM_IP).
 
