@@ -31,18 +31,18 @@ This section is not applicable to external users/customers, since we cannot dist
 
 5. Power on the vm and go to console and run the Karan_Config.ps1 script in desktop with powershell (Input parameter is the PC_IP/CALM_IP).
 
-IMAGE1
+https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image1.png
 
-IMAGE2
+https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image2.png
 
 Now karan will be up and running. To verify, open services.msc and check the karan_1 service status.
 
-IMAGE3
+https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image3.png
 
-IMAGE4
+https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image4.png
 
 **NOTE:**   Make sure you update the karan service logon account details if you want to change the administrator user account/passwords.
 
-IMAGE5
+https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image5.png
 
 
