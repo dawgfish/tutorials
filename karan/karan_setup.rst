@@ -2,6 +2,13 @@
 Setup Karan
 ************************
 
+Prerequisites:
+**************
+Karan QCOW2 Image
+
+Setup:
+*******
+
 Setup Karan (required for windows automation)
 
 - For windows automation using calm to work, a separate windows server(2012) has to be setup and karan.exe(binary) has to be installed on the server (setup instructions will be there in the guide)
