@@ -4,8 +4,10 @@ Setup Karan
 
 Setup   Karan    (required   for   windows   automation)
 - For windows automation using calm to work, a separate windows server(2012) has to be setup and karan.exe(binary) has to be installed on the server (setup instructions will be there in the guide)
-- Once   the   karan   is   configured,   the   end   user   machines(vms)   that   you   want   to   provision   using   calm   *do not   require   karan   to   be   installed   on   them   *.   The   end   user   images   must   have   ps   remoting   enabled(which will   be   documented   and   by   default   enabled   on   2012/2016   servers)   .
-- Additionally,   if   there   is   requirement   for   lot   of   windows   automation   flows/apps,   you   can   create multiple   vms   with   karan   installed   and   configure   it   to   work   with   existing   calm   vm.
+
+- Once the karan is configured, the end user machines(vms) that you want to provision using calm *do not   require karan to be installed on them*. The end user images must have ps remoting enabled(which will be   documented and by default enabled on 2012/2016 servers).
+
+- Additionally, if there is requirement for lot of windows automation flows/apps, you can create multiple vms   with karan installed and configure it to work with existing calm vm.
 
 **NOTE:** 
 
