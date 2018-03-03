@@ -32,6 +32,8 @@ If set to internal, you will need to fill out the following variables:
 - mapped_drive
 
 
+Enable CredSSP
+==============
 To Enable CredSSP on the Karan host, please follow steps below:
 
 1. On the Karan Host run the following command to enable CredSSP as a client role and allow Karan host to Delegate credentials to all computers ( Wild card mask "*")
@@ -44,6 +46,8 @@ To Enable CredSSP on the Karan host, please follow steps below:
 7. In the value field add  “WSMAN/*”. This allows delegate fresh credentials to WSMAN running in any remote computer
 
 
+Privileges:
+============
 To assign the correct privileges, please follow the steps below:
 
 1. Idenitfy the user account that the Karan service is running as 
