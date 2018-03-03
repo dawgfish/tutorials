@@ -35,13 +35,13 @@ This section is not applicable to external users/customers, since we cannot dist
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image2.png
 
-Now karan will be up and running. To verify, open services.msc and check the karan_1 service status.
+6. Now karan will be up and running. To verify, open services.msc and check the karan_1 service status.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image3.png
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image4.png
 
-**NOTE:**   Make sure you update the karan service logon account details if you want to change the administrator user account/passwords.
+7. **NOTE:**   Make sure you update the karan service logon account details if you want to change the administrator user account/passwords.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/karan/image5.png
 
