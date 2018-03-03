@@ -24,3 +24,5 @@ This section is not applicable to external users/customers, since we cannot dist
 
 5. Power on the vm and go to console and run the Karan_Config.ps1 script in desktop with powershell (Input parameter is the PC_IP/CALM_IP).
 
+
+
